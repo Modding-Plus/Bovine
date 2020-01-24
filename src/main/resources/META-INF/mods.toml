@@ -1,0 +1,30 @@
+modLoader="javafml"
+loaderVersion="[28,)"
+issueTrackerURL="https://www.github.com/Modding-Plus/Bovine/issues"
+
+[[mods]]
+modId="bovine"
+version="${file.jarVersion}"
+displayName="Bovine"
+#updateJSONURL=""
+#displayURL=""
+#logoFile="examplemod.png"
+#credits=""
+authors="Trikzon: Code; Qbert: Assets"
+description='''
+Cows
+'''
+
+[[dependencies.bovine]]
+    modId="forge"
+    mandatory=true
+    versionRange="[28,)"
+    ordering="NONE"
+    side="BOTH"
+    
+[[dependencies.bovine]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.14.4]"
+    ordering="NONE"
+    side="BOTH"
