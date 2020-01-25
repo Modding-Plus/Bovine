@@ -1,3 +1,15 @@
+/* =====================================================================
+ * This class is distributed as part of the Bovine Mod.
+ * Get the Source Code on github: https://github.com/Modding-Plus/Bovine
+ *
+ * Bovine is Open Source and distributed under the
+ * MIT License: https://opensource.org/licenses/MIT
+ *
+ * File: BovineArmorMaterials.java
+ * Date: 2020-01-24
+ * Revision:
+ * Author: Trikzon
+ * ===================================================================== */
 package com.moddingplus.bovine.registry;
 
 import net.minecraft.inventory.EquipmentSlotType;
@@ -11,8 +23,10 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.function.Supplier;
 
-public enum BovineArmorMaterials implements IArmorMaterial {
-    ALLIUM_AFRO("allium_afro", 5, new int[]{1, 2, 3, 1}, 0, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, () -> {
+public enum BovineArmorMaterials implements IArmorMaterial
+{
+    ALLIUM_AFRO("allium_afro", 5, new int[]{1, 2, 3, 1}, 0, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, () ->
+    {
         return Ingredient.fromItems(BovineObjects.Items.ALLIUM_BULB);
     });
 
@@ -25,7 +39,8 @@ public enum BovineArmorMaterials implements IArmorMaterial {
     private final float toughness;
     private final LazyLoadBase<Ingredient> repairMaterial;
 
-    private BovineArmorMaterials(String nameIn, int maxDamageFactorIn, int[] damageReductionAmountsIn, int enchantabilityIn, SoundEvent equipSoundIn, float p_i48533_8_, Supplier<Ingredient> repairMaterialSupplier) {
+    private BovineArmorMaterials(String nameIn, int maxDamageFactorIn, int[] damageReductionAmountsIn, int enchantabilityIn, SoundEvent equipSoundIn, float p_i48533_8_, Supplier<Ingredient> repairMaterialSupplier)
+    {
         this.name = nameIn;
         this.maxDamageFactor = maxDamageFactorIn;
         this.damageReductionAmountArray = damageReductionAmountsIn;
@@ -35,32 +50,39 @@ public enum BovineArmorMaterials implements IArmorMaterial {
         this.repairMaterial = new LazyLoadBase<>(repairMaterialSupplier);
     }
 
-    public int getDurability(EquipmentSlotType slotIn) {
+    public int getDurability(EquipmentSlotType slotIn)
+    {
         return MAX_DAMAGE_ARRAY[slotIn.getIndex()] * this.maxDamageFactor;
     }
 
-    public int getDamageReductionAmount(EquipmentSlotType slotIn) {
+    public int getDamageReductionAmount(EquipmentSlotType slotIn)
+    {
         return this.damageReductionAmountArray[slotIn.getIndex()];
     }
 
-    public int getEnchantability() {
+    public int getEnchantability()
+    {
         return this.enchantability;
     }
 
-    public SoundEvent getSoundEvent() {
+    public SoundEvent getSoundEvent()
+    {
         return this.soundEvent;
     }
 
-    public Ingredient getRepairMaterial() {
+    public Ingredient getRepairMaterial()
+    {
         return this.repairMaterial.getValue();
     }
 
     @OnlyIn(Dist.CLIENT)
-    public String getName() {
+    public String getName()
+    {
         return this.name;
     }
 
-    public float getToughness() {
+    public float getToughness()
+    {
         return this.toughness;
     }
 }

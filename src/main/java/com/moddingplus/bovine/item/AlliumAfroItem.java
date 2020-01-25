@@ -1,8 +1,21 @@
+/* =====================================================================
+ * This class is distributed as part of the Bovine Mod.
+ * Get the Source Code on github: https://github.com/Modding-Plus/Bovine
+ *
+ * Bovine is Open Source and distributed under the
+ * MIT License: https://opensource.org/licenses/MIT
+ *
+ * File: AlliumAfroItem.java
+ * Date: 2020-01-24
+ * Revision:
+ * Author: Trikzon
+ * ===================================================================== */
 package com.moddingplus.bovine.item;
 
 import com.moddingplus.bovine.Bovine;
 import com.moddingplus.bovine.model.armor.AlliumAfroModel;
 import com.moddingplus.bovine.registry.BovineArmorMaterials;
+
 import net.minecraft.client.renderer.entity.model.BipedModel;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -15,9 +28,10 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
 
-public class AlliumAfroItem extends ArmorItem {
-
-    public AlliumAfroItem() {
+public class AlliumAfroItem extends ArmorItem
+{
+    public AlliumAfroItem()
+    {
         super(BovineArmorMaterials.ALLIUM_AFRO, EquipmentSlotType.HEAD, new Item.Properties().group(Bovine.ITEM_GROUP));
         this.setRegistryName(Bovine.MOD_ID, "allium_afro");
     }
@@ -25,7 +39,8 @@ public class AlliumAfroItem extends ArmorItem {
     @Nullable
     @Override
     @OnlyIn(Dist.CLIENT)
-    public <A extends BipedModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlotType armorSlot, A _default) {
+    public <A extends BipedModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlotType armorSlot, A _default)
+    {
         AlliumAfroModel model = new AlliumAfroModel();
         model.bipedHeadwear.showModel = (armorSlot == EquipmentSlotType.HEAD);
 
@@ -40,7 +55,8 @@ public class AlliumAfroItem extends ArmorItem {
 
     @Nullable
     @Override
-    public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
+    public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type)
+    {
         return "bovine:textures/models/armor/allium_afro.png";
     }
 }
