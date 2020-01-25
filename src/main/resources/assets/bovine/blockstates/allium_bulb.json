@@ -1,0 +1,102 @@
+{
+  "variants": {
+    "bulbs=1,facing=up,waterlogged=false": [
+      { "model": "bovine:block/allium_bulb_1", "y": 0,   "x": 0 },
+      { "model": "bovine:block/allium_bulb_1", "y": 90,  "x": 0 },
+      { "model": "bovine:block/allium_bulb_1", "y": 180, "x": 0 },
+      { "model": "bovine:block/allium_bulb_1", "y": 270, "x": 0 }
+    ],
+    "bulbs=1,facing=up,waterlogged=true": [
+      { "model": "bovine:block/allium_bulb_1", "y": 0,   "x": 0 },
+      { "model": "bovine:block/allium_bulb_1", "y": 90,  "x": 0 },
+      { "model": "bovine:block/allium_bulb_1", "y": 180, "x": 0 },
+      { "model": "bovine:block/allium_bulb_1", "y": 270, "x": 0 }
+    ],
+    "bulbs=1,facing=down,waterlogged=false": [
+      { "model": "bovine:block/allium_bulb_1", "y": 0,   "x": 180 },
+      { "model": "bovine:block/allium_bulb_1", "y": 90,  "x": 180 },
+      { "model": "bovine:block/allium_bulb_1", "y": 180, "x": 180 },
+      { "model": "bovine:block/allium_bulb_1", "y": 270, "x": 180 }
+    ],
+    "bulbs=1,facing=down,waterlogged=true": [
+      { "model": "bovine:block/allium_bulb_1", "y": 0,   "x": 180 },
+      { "model": "bovine:block/allium_bulb_1", "y": 90, "x": 180 },
+      { "model": "bovine:block/allium_bulb_1", "y": 180, "x": 180 },
+      { "model": "bovine:block/allium_bulb_1", "y": 270, "x": 180 }
+    ],
+    "bulbs=1,facing=east,waterlogged=false": { "model": "bovine:block/allium_bulb_1", "y": 90, "x": 90 },
+    "bulbs=1,facing=east,waterlogged=true": { "model": "bovine:block/allium_bulb_1", "y": 90, "x": 90 },
+    "bulbs=1,facing=south,waterlogged=false": { "model": "bovine:block/allium_bulb_1", "y": 180, "x": 90 },
+    "bulbs=1,facing=south,waterlogged=true": { "model": "bovine:block/allium_bulb_1", "y": 180, "x": 90 },
+    "bulbs=1,facing=west,waterlogged=false": { "model": "bovine:block/allium_bulb_1", "y": 270, "x": 90 },
+    "bulbs=1,facing=west,waterlogged=true": { "model": "bovine:block/allium_bulb_1", "y": 270, "x": 90 },
+    "bulbs=1,facing=north,waterlogged=false": { "model": "bovine:block/allium_bulb_1", "y": 0, "x": 90 },
+    "bulbs=1,facing=north,waterlogged=true": { "model": "bovine:block/allium_bulb_1", "y": 0, "x": 90 },
+
+    "bulbs=2,facing=up,waterlogged=false": [
+      { "model": "bovine:block/allium_bulb_2", "y": 0,   "x": 0 },
+      { "model": "bovine:block/allium_bulb_2", "y": 90,  "x": 0 },
+      { "model": "bovine:block/allium_bulb_2", "y": 180, "x": 0 },
+      { "model": "bovine:block/allium_bulb_2", "y": 270, "x": 0 }
+    ],
+    "bulbs=2,facing=up,waterlogged=true": [
+      { "model": "bovine:block/allium_bulb_2", "y": 0,   "x": 0 },
+      { "model": "bovine:block/allium_bulb_2", "y": 90,  "x": 0 },
+      { "model": "bovine:block/allium_bulb_2", "y": 180, "x": 0 },
+      { "model": "bovine:block/allium_bulb_2", "y": 270, "x": 0 }
+    ],
+    "bulbs=2,facing=down,waterlogged=false": [
+      { "model": "bovine:block/allium_bulb_2", "y": 0,   "x": 180 },
+      { "model": "bovine:block/allium_bulb_2", "y": 90,  "x": 180 },
+      { "model": "bovine:block/allium_bulb_2", "y": 180, "x": 180 },
+      { "model": "bovine:block/allium_bulb_2", "y": 270, "x": 180 }
+    ],
+    "bulbs=2,facing=down,waterlogged=true": [
+      { "model": "bovine:block/allium_bulb_2", "y": 0,   "x": 180 },
+      { "model": "bovine:block/allium_bulb_2", "y": 90, "x": 180 },
+      { "model": "bovine:block/allium_bulb_2", "y": 180, "x": 180 },
+      { "model": "bovine:block/allium_bulb_2", "y": 270, "x": 180 }
+    ],
+    "bulbs=2,facing=east,waterlogged=false": { "model": "bovine:block/allium_bulb_2", "y": 90, "x": 90 },
+    "bulbs=2,facing=east,waterlogged=true": { "model": "bovine:block/allium_bulb_2", "y": 90, "x": 90 },
+    "bulbs=2,facing=south,waterlogged=false": { "model": "bovine:block/allium_bulb_2", "y": 180, "x": 90 },
+    "bulbs=2,facing=south,waterlogged=true": { "model": "bovine:block/allium_bulb_2", "y": 180, "x": 90 },
+    "bulbs=2,facing=west,waterlogged=false": { "model": "bovine:block/allium_bulb_2", "y": 270, "x": 90 },
+    "bulbs=2,facing=west,waterlogged=true": { "model": "bovine:block/allium_bulb_2", "y": 270, "x": 90 },
+    "bulbs=2,facing=north,waterlogged=false": { "model": "bovine:block/allium_bulb_2", "y": 0, "x": 90 },
+    "bulbs=2,facing=north,waterlogged=true": { "model": "bovine:block/allium_bulb_2", "y": 0, "x": 90 },
+
+    "bulbs=3,facing=up,waterlogged=false": [
+      { "model": "bovine:block/allium_bulb_3", "y": 0,   "x": 0 },
+      { "model": "bovine:block/allium_bulb_3", "y": 90,  "x": 0 },
+      { "model": "bovine:block/allium_bulb_3", "y": 180, "x": 0 },
+      { "model": "bovine:block/allium_bulb_3", "y": 270, "x": 0 }
+    ],
+    "bulbs=3,facing=up,waterlogged=true": [
+      { "model": "bovine:block/allium_bulb_3", "y": 0,   "x": 0 },
+      { "model": "bovine:block/allium_bulb_3", "y": 90,  "x": 0 },
+      { "model": "bovine:block/allium_bulb_3", "y": 180, "x": 0 },
+      { "model": "bovine:block/allium_bulb_3", "y": 270, "x": 0 }
+    ],
+    "bulbs=3,facing=down,waterlogged=false": [
+      { "model": "bovine:block/allium_bulb_3", "y": 0,   "x": 180 },
+      { "model": "bovine:block/allium_bulb_3", "y": 90,  "x": 180 },
+      { "model": "bovine:block/allium_bulb_3", "y": 180, "x": 180 },
+      { "model": "bovine:block/allium_bulb_3", "y": 270, "x": 180 }
+    ],
+    "bulbs=3,facing=down,waterlogged=true": [
+      { "model": "bovine:block/allium_bulb_3", "y": 0,   "x": 180 },
+      { "model": "bovine:block/allium_bulb_3", "y": 90, "x": 180 },
+      { "model": "bovine:block/allium_bulb_3", "y": 180, "x": 180 },
+      { "model": "bovine:block/allium_bulb_3", "y": 270, "x": 180 }
+    ],
+    "bulbs=3,facing=east,waterlogged=false": { "model": "bovine:block/allium_bulb_3", "y": 90, "x": 90 },
+    "bulbs=3,facing=east,waterlogged=true": { "model": "bovine:block/allium_bulb_3", "y": 90, "x": 90 },
+    "bulbs=3,facing=south,waterlogged=false": { "model": "bovine:block/allium_bulb_3", "y": 180, "x": 90 },
+    "bulbs=3,facing=south,waterlogged=true": { "model": "bovine:block/allium_bulb_3", "y": 180, "x": 90 },
+    "bulbs=3,facing=west,waterlogged=false": { "model": "bovine:block/allium_bulb_3", "y": 270, "x": 90 },
+    "bulbs=3,facing=west,waterlogged=true": { "model": "bovine:block/allium_bulb_3", "y": 270, "x": 90 },
+    "bulbs=3,facing=north,waterlogged=false": { "model": "bovine:block/allium_bulb_3", "y": 0, "x": 90 },
+    "bulbs=3,facing=north,waterlogged=true": { "model": "bovine:block/allium_bulb_3", "y": 0, "x": 90 }
+  }
+}
