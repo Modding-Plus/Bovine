@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "bovine:allium_bulb"
+    }
+  },
+  "result": {
+    "item": "bovine:allium_afro",
+    "count": 1
+  }
+}
