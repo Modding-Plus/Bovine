@@ -13,8 +13,8 @@
 package com.moddingplus.bovine.item;
 
 import com.moddingplus.bovine.Bovine;
-import com.moddingplus.bovine.model.armor.AlliumAfroModel;
-import com.moddingplus.bovine.registry.BovineArmorMaterials;
+import com.moddingplus.bovine.item.model.AlliumAfroModel;
+import com.moddingplus.bovine.init.BovineArmorMaterials;
 
 import net.minecraft.client.renderer.entity.model.BipedModel;
 import net.minecraft.entity.Entity;

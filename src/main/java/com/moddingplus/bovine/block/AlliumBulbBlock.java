@@ -13,7 +13,7 @@
 package com.moddingplus.bovine.block;
 
 import com.moddingplus.bovine.Bovine;
-import com.moddingplus.bovine.registry.BovineObjects;
+import com.moddingplus.bovine.init.BovineObjects;
 
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;

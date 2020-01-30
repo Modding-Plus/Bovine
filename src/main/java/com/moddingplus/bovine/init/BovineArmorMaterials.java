@@ -10,7 +10,7 @@
  * Revision:
  * Author: Trikzon
  * ===================================================================== */
-package com.moddingplus.bovine.registry;
+package com.moddingplus.bovine.init;
 
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;

@@ -10,7 +10,7 @@
  * Revision:
  * Author: Trikzon
  * ===================================================================== */
-package com.moddingplus.bovine.model.armor;
+package com.moddingplus.bovine.item.model;
 
 import net.minecraft.client.renderer.entity.model.BipedModel;
 import net.minecraft.client.renderer.entity.model.RendererModel;

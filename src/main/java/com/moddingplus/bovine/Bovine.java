@@ -12,8 +12,9 @@
  * ===================================================================== */
 package com.moddingplus.bovine;
 
-import com.moddingplus.bovine.registry.BovineObjects;
-import com.moddingplus.bovine.registry.RegistryHandler;
+import com.moddingplus.bovine.init.BovineObjects;
+import com.moddingplus.bovine.init.ClientHandler;
+import com.moddingplus.bovine.init.RegistryHandler;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -31,6 +32,7 @@ public class Bovine
     public Bovine()
     {
         MinecraftForge.EVENT_BUS.register(RegistryHandler.class);
+        MinecraftForge.EVENT_BUS.register(ClientHandler.class);
     }
 
     public static final ItemGroup ITEM_GROUP = new ItemGroup(MOD_ID)

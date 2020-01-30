@@ -10,11 +10,12 @@
  * Revision:
  * Author: Trikzon
  * ===================================================================== */
-package com.moddingplus.bovine.registry;
+package com.moddingplus.bovine.init;
 
 import com.moddingplus.bovine.Bovine;
 
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.ObjectHolder;
 
@@ -41,5 +42,13 @@ public class BovineObjects
         public static final Item ALLIUM_BULB = sneakyNull();
 
         public static final Item ALLIUM_AFRO = sneakyNull();
+
+        public static final Item ALLIUMOO_SPAWN_EGG = sneakyNull();
+    }
+
+    @ObjectHolder(Bovine.MOD_ID)
+    public static class Entities
+    {
+        public static final EntityType<?> ALLIUMOO = sneakyNull();
     }
 }
