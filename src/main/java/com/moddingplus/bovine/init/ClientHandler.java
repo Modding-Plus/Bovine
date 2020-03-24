@@ -1,8 +1,6 @@
 package com.moddingplus.bovine.init;
 
 import com.moddingplus.bovine.entity.renderer.AlliumooRenderer;
-import com.moddingplus.bovine.init.BovineObjects.Blocks;
-import com.moddingplus.bovine.init.BovineObjects.Entities;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.api.distmarker.Dist;
@@ -20,8 +18,8 @@ public class ClientHandler
     public static void onFMLClientSetup(FMLClientSetupEvent event)
     {
         // Apparently this is what is needed for transparency now
-        RenderTypeLookup.setRenderLayer(Blocks.ALLIUM_BULB, RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BovineObjects.ALLIUM_BULB.get(), RenderType.getCutout());
 
-        RenderingRegistry.registerEntityRenderingHandler(Entities.ALLIUMOO, new AlliumooRenderer.RenderFactory());
+        RenderingRegistry.registerEntityRenderingHandler(BovineObjects.ALLIUMOO.get(), new AlliumooRenderer.RenderFactory());
     }
 }

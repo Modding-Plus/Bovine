@@ -54,7 +54,6 @@ public class AlliumBulbBlock extends Block implements IWaterLoggable
     public AlliumBulbBlock()
     {
         super(Block.Properties.create(Material.WOOL).hardnessAndResistance(0.25F).sound(SoundType.CLOTH));
-        this.setRegistryName(new ResourceLocation(Bovine.MOD_ID, "allium_bulb"));
         this.setDefaultState(
                 this.stateContainer.getBaseState()
                         .with(FACING, Direction.UP)
@@ -109,7 +108,7 @@ public class AlliumBulbBlock extends Block implements IWaterLoggable
     public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult rayTraceResult)
     {
         ItemStack heldItem = player.getHeldItem(hand);
-        if (heldItem.getItem() != BovineObjects.Items.ALLIUM_BULB) return ActionResultType.PASS;
+        if (!heldItem.getItem().equals(BovineObjects.ALLIUM_BULB.get())) return ActionResultType.PASS;
 
         int bulbCount = state.get(BULBS_1_3);
         if (bulbCount >= 3) return ActionResultType.PASS;

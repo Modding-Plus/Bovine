@@ -14,11 +14,12 @@ package com.moddingplus.bovine;
 
 import com.moddingplus.bovine.init.BovineObjects;
 import com.moddingplus.bovine.init.ClientHandler;
-import com.moddingplus.bovine.init.RegistryHandler;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -31,8 +32,12 @@ public class Bovine
 
     public Bovine()
     {
-        MinecraftForge.EVENT_BUS.register(RegistryHandler.class);
         MinecraftForge.EVENT_BUS.register(ClientHandler.class);
+        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(
+                EntityType.class, BovineObjects::onEntityWorldSpawnRegistry
+        );
+
+        BovineObjects.register();
     }
 
     public static final ItemGroup ITEM_GROUP = new ItemGroup(MOD_ID)
@@ -40,7 +45,7 @@ public class Bovine
         @Override
         public ItemStack createIcon()
         {
-            return new ItemStack(BovineObjects.Items.ALLIUM_BULB);
+            return new ItemStack(BovineObjects.ALLIUM_BULB.get());
         }
     };
 }

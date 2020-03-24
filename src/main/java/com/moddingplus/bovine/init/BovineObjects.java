@@ -14,43 +14,80 @@ package com.moddingplus.bovine.init;
 
 import com.moddingplus.bovine.Bovine;
 
+import com.moddingplus.bovine.block.AlliumBulbBlock;
 import com.moddingplus.bovine.entity.AlliumooEntity;
+import com.moddingplus.bovine.item.AlliumAfroItem;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraftforge.registries.ObjectHolder;
-
-import javax.annotation.Nonnull;
+import net.minecraft.item.Item.Properties;
+import net.minecraft.item.SpawnEggItem;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class BovineObjects
 {
-    @SuppressWarnings("ConstantConditions")
-    @Nonnull
-    private static <T> T sneakyNull()
+    public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, Bovine.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, Bovine.MOD_ID);
+    public static final DeferredRegister<EntityType<?>> ENTITIES = new DeferredRegister<>(ForgeRegistries.ENTITIES, Bovine.MOD_ID);
+
+    public static final RegistryObject<Block> ALLIUM_BULB = registerBlock(
+            "allium_bulb",
+            new AlliumBulbBlock(),
+            new Item.Properties().group(Bovine.ITEM_GROUP)
+    );
+    public static final RegistryObject<Item> ALLIUM_AFRO = registerItem(
+            "allium_afro",
+            new AlliumAfroItem()
+    );
+    private static final EntityType<AlliumooEntity> ALLIUMOO_ENTITY_TYPE = EntityType.Builder.create(AlliumooEntity::new, EntityClassification.CREATURE).build(Bovine.MOD_ID + ":alliumoo");
+    public static final RegistryObject<EntityType<AlliumooEntity>> ALLIUMOO = registerEntity(
+            "alliumoo",
+            ALLIUMOO_ENTITY_TYPE
+    );
+    public static final RegistryObject<Item> ALLIUMOO_SPAWN_EGG = registerItem(
+            "alliumoo_spawn_egg",
+            new SpawnEggItem(
+                    ALLIUMOO_ENTITY_TYPE,
+                    0x461e66,
+                    0xd2a6f6,
+                    new Item.Properties().group(Bovine.ITEM_GROUP)
+            )
+    );
+
+    public static void register()
     {
-        return null;
+        BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
-    @ObjectHolder(Bovine.MOD_ID)
-    public static class Blocks
+    private static RegistryObject<Block> registerBlock(String name, Block block, Properties properties)
     {
-        public static final Block ALLIUM_BULB = sneakyNull();
+        ITEMS.register(name, () -> new BlockItem(block, properties));
+        return BLOCKS.register(name, () -> block);
     }
 
-    @ObjectHolder(Bovine.MOD_ID)
-    public static class Items
+    private static RegistryObject<Item> registerItem(String name, Item item)
     {
-        public static final Item ALLIUM_BULB = sneakyNull();
-
-        public static final Item ALLIUM_AFRO = sneakyNull();
-
-        public static final Item ALLIUMOO_SPAWN_EGG = sneakyNull();
+        return ITEMS.register(name, () -> item);
     }
 
-    @ObjectHolder(Bovine.MOD_ID)
-    public static class Entities
+    private static <T extends Entity> RegistryObject<EntityType<T>> registerEntity(String name, EntityType<T> entityType)
     {
-        public static final EntityType<AlliumooEntity> ALLIUMOO = sneakyNull();
+        return ENTITIES.register(name, () -> entityType);
+    }
+
+    public static void onEntityWorldSpawnRegistry(RegistryEvent.Register<EntityType<?>> event)
+    {
+        Biomes.PLAINS.getSpawns(ALLIUMOO_ENTITY_TYPE.getClassification()).add(new Biome.SpawnListEntry(ALLIUMOO_ENTITY_TYPE, 10, 1, 10));
     }
 }

@@ -33,7 +33,6 @@ public class AlliumAfroItem extends ArmorItem
     public AlliumAfroItem()
     {
         super(BovineArmorMaterials.ALLIUM_AFRO, EquipmentSlotType.HEAD, new Item.Properties().group(Bovine.ITEM_GROUP));
-        this.setRegistryName(Bovine.MOD_ID, "allium_afro");
     }
 
     @Nullable

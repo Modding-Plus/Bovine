@@ -27,7 +27,7 @@ public enum BovineArmorMaterials implements IArmorMaterial
 {
     ALLIUM_AFRO("allium_afro", 5, new int[]{1, 2, 3, 1}, 0, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, () ->
     {
-        return Ingredient.fromItems(BovineObjects.Items.ALLIUM_BULB);
+        return Ingredient.fromItems(BovineObjects.ALLIUM_BULB.get());
     });
 
     private static final int[] MAX_DAMAGE_ARRAY = new int[]{13, 15, 16, 11};
