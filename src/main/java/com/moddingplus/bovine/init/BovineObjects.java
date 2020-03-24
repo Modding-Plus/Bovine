@@ -14,7 +14,9 @@ package com.moddingplus.bovine.init;
 
 import com.moddingplus.bovine.Bovine;
 
+import com.moddingplus.bovine.entity.AlliumooEntity;
 import net.minecraft.block.Block;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.ObjectHolder;
@@ -49,6 +51,6 @@ public class BovineObjects
     @ObjectHolder(Bovine.MOD_ID)
     public static class Entities
     {
-        public static final EntityType<?> ALLIUMOO = sneakyNull();
+        public static final EntityType<AlliumooEntity> ALLIUMOO = sneakyNull();
     }
 }

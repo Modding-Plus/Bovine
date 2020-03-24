@@ -40,7 +40,7 @@ public class RegistryHandler
         );
     }
 
-    private static EntityType<?> ALLIUMOO = EntityType.Builder.create(AlliumooEntity::new, EntityClassification.CREATURE)
+    private static final EntityType<?> ALLIUMOO = EntityType.Builder.create(AlliumooEntity::new, EntityClassification.CREATURE)
             .build(Bovine.MOD_ID + ":alliumoo").setRegistryName(Bovine.MOD_ID, "alliumoo");
 
     @SubscribeEvent

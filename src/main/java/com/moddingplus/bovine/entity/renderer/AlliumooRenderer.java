@@ -23,7 +23,7 @@ public class AlliumooRenderer extends LivingRenderer<AlliumooEntity, AlliumooMod
 
     @Nullable
     @Override
-    protected ResourceLocation getEntityTexture(AlliumooEntity entity)
+    public ResourceLocation getEntityTexture(AlliumooEntity entity)
     {
         return new ResourceLocation(Bovine.MOD_ID, "textures/entity/alliumoo_adult.png");
     }

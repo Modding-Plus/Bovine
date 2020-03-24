@@ -12,37 +12,50 @@
  * ===================================================================== */
 package com.moddingplus.bovine.item.model;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.entity.model.BipedModel;
-import net.minecraft.client.renderer.entity.model.RendererModel;
-import net.minecraft.client.renderer.model.ModelBox;
+import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.item.ArmorStandEntity;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
+@OnlyIn(Dist.CLIENT)
 public class AlliumAfroModel extends BipedModel
 {
-    private final RendererModel bone;
+    private final ModelRenderer bone;
 
     public AlliumAfroModel()
     {
+        super(1.0f);
         textureWidth = 64;
         textureHeight = 64;
 
-        bone = new RendererModel(this, 0, 0);
+        bone = new ModelRenderer(this, 0, 0);
         bone.setRotationPoint(-8.0F, -16.0F, 6.0F);
         bone.rotateAngleX = 20.0f;
-        bone.cubeList.add(new ModelBox(bone, 0, 32, 3.0F, -6.0F, -13.0F, 10, 10, 10, 0.0F, false));
-        bone.cubeList.add(new ModelBox(bone, 12, 52, 2.0F, -7.0F, -3.0F, 12, 12, 0, 0.0F, false));
-        bone.cubeList.add(new ModelBox(bone, 12, 52, 2.0F, -7.0F, -13.0F, 12, 12, 0, 0.0F, false));
-        bone.cubeList.add(new ModelBox(bone, 12, 52, 2.0F, -7.0F, -13.0F, 12, 12, 0, 0.0F, false));
-        bone.cubeList.add(new ModelBox(bone, 12, 52, 2.0F, -7.0F, -3.0F, 12, 12, 0, 0.0F, false));
+        addBox(bone, 0, 32, 3.0F, -6.0F, -13.0F, 10, 10, 10, 0.0F, false);
+        addBox(bone, 12, 52, 2.0F, -7.0F, -3.0F, 12, 12, 0, 0.0F, false);
+        addBox(bone, 12, 52, 2.0F, -7.0F, -13.0F, 12, 12, 0, 0.0F, false);
+        addBox(bone, 12, 52, 2.0F, -7.0F, -13.0F, 12, 12, 0, 0.0F, false);
+        addBox(bone, 12, 52, 2.0F, -7.0F, -3.0F, 12, 12, 0, 0.0F, false);
 
         this.bipedHeadwear.addChild(bone);
     }
 
-    @Override
-    public void render(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale)
+    public void addBox(
+            ModelRenderer bone, int texOffX, int texOffY,
+            float x, float y, float z, float width, float height,
+            float depth, float delta, boolean mirror)
     {
-        super.render(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+        bone.setTextureOffset(texOffX, texOffY).addBox(x, y, z, width, height, depth, delta, mirror);
+    }
+
+    @Override
+    public void render(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha)
+    {
+        super.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
     }
 
     // NOTE: Copied from Botania Code. Thank you for being open source and helping modders like me :)
@@ -51,11 +64,11 @@ public class AlliumAfroModel extends BipedModel
     // [VanillaCopy] ArmorStandArmorModel.setRotationAngles because armor stands are dumb
     // This fixes the armor "breathing" and helmets always facing south on armor stands
     @Override
-    public void setRotationAngles(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor)
+    public void setRotationAngles(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch)
     {
         if (!(entity instanceof ArmorStandEntity))
         {
-            super.setRotationAngles(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor);
+            super.setRotationAngles(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
             return;
         }
 
@@ -84,10 +97,10 @@ public class AlliumAfroModel extends BipedModel
         this.bipedHeadwear.copyModelAngles(this.bipedHead);
     }
 
-    protected void setRotateAngle(RendererModel rendererModel, float x, float y, float z)
+    protected void setRotateAngle(ModelRenderer ModelRenderer, float x, float y, float z)
     {
-        rendererModel.rotateAngleX = x;
-        rendererModel.rotateAngleY = y;
-        rendererModel.rotateAngleZ = z;
+        ModelRenderer.rotateAngleX = x;
+        ModelRenderer.rotateAngleY = y;
+        ModelRenderer.rotateAngleZ = z;
     }
 }

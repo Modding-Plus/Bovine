@@ -10,21 +10,21 @@ displayName="Bovine"
 #displayURL=""
 #logoFile="examplemod.png"
 #credits=""
-authors="Trikzon: Code; Qbert: Assets"
+authors="Trikzon, Qbert, Modding+"
 description='''
-Cows
+Moo
 '''
 
-[[dependencies.bovine]]
-    modId="forge"
-    mandatory=true
-    versionRange="[28,)"
-    ordering="NONE"
-    side="BOTH"
-    
-[[dependencies.bovine]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.14.4]"
-    ordering="NONE"
-    side="BOTH"
+#[[dependencies.bovine]]
+#    modId="forge"
+#    mandatory=true
+#    versionRange="[28,)"
+#    ordering="NONE"
+#    side="BOTH"
+#
+#[[dependencies.bovine]]
+#    modId="minecraft"
+#    mandatory=true
+#    versionRange="[1.14.4]"
+#    ordering="NONE"
+#    side="BOTH"
